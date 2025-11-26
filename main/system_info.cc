@@ -49,8 +49,7 @@ std::string SystemInfo::GetChipModelName() {
 
 std::string SystemInfo::GetUserAgent() {
     auto app_desc = esp_app_get_description();
-    // 修正点：直接用双引号写上你的名字，后面加上 "/"，保留版本号以符合网络规范
-    std::string user_agent = std::string("PCBDOG AI/") + app_desc->version;
+    auto user_agent = std::string(BOARD_NAME "/") + app_desc->version;
     return user_agent;
 }
 
