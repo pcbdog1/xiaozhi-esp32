@@ -27,35 +27,20 @@ void LcdDisplay::InitializeLcdThemes() {
     auto large_icon_font = std::make_shared<LvglBuiltInFont>(&font_awesome_30_4);
 
     // light theme
-  // light theme (魔改为：PCBDOG 暗黑模式)
     auto light_theme = new LvglTheme("light");
-    // 1. 背景：由白(FFFFFF) 改为 黑(000000)
     light_theme->set_background_color(lv_color_hex(0x000000));
-    
-    // 2. 全局文字：由黑(000000) 改为 白(FFFFFF)
     light_theme->set_text_color(lv_color_hex(0xFFFFFF));
-    
-    // 3. 聊天区域背景：改为黑色，与大背景融合
     light_theme->set_chat_background_color(lv_color_hex(0x000000));
-    
-    // 4. 用户气泡(右边)：保持绿色(00FF00)，或者你可以改成你喜欢的颜色
     light_theme->set_user_bubble_color(lv_color_hex(0x00FF00));
-    
-    // 5. 机器人气泡(左边)：改为深灰色(333333)，这样白字才看得清
-    light_theme->set_assistant_bubble_color(lv_color_hex(0x333333));
-    
-    // 6. 系统气泡：改为黑色
+    light_theme->set_assistant_bubble_color(lv_color_hex(0xDDDDDD));
     light_theme->set_system_bubble_color(lv_color_hex(0x000000));
-    
-    // 7. 系统文字：改为白色
     light_theme->set_system_text_color(lv_color_hex(0xFFFFFF));
-    
-    // 8. 边框颜色：改为白色(或者深灰)，不然黑色背景上看不见边框
     light_theme->set_border_color(lv_color_hex(0xFFFFFF));
-    
-    // 9. 低电量提示：保持红色
     light_theme->set_low_battery_color(lv_color_hex(0xFF0000));
-
+    light_theme->set_text_font(text_font);
+    light_theme->set_icon_font(icon_font);
+    light_theme->set_large_icon_font(large_icon_font);
+    
     // dark theme
     auto dark_theme = new LvglTheme("dark");
     dark_theme->set_background_color(lv_color_hex(0x000000));
