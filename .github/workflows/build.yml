@@ -1,7 +1,11 @@
 name: Build Boards
-
-on:
- workflow_dispatch:
+ on:
+  workflow_dispatch:
+    inputs:
+      board:
+        description: 'Board to build'
+        required: true
+        default: 'zhengchen-1.54tft-wifi'
   push:
     branches:
       - main
