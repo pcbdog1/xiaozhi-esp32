@@ -28,15 +28,15 @@ void LcdDisplay::InitializeLcdThemes() {
 
     // light theme
     auto light_theme = new LvglTheme("light");
-    light_theme->set_background_color(lv_color_hex(0x000000));
-    light_theme->set_text_color(lv_color_hex(0xFFFFFF));
-    light_theme->set_chat_background_color(lv_color_hex(0x000000));
+    light_theme->set_background_color(lv_color_hex(0xFFFFFF));
+    light_theme->set_text_color(lv_color_hex(0x000000));
+    light_theme->set_chat_background_color(lv_color_hex(0xE0E0E0));
     light_theme->set_user_bubble_color(lv_color_hex(0x00FF00));
     light_theme->set_assistant_bubble_color(lv_color_hex(0xDDDDDD));
-    light_theme->set_system_bubble_color(lv_color_hex(0x000000));
-    light_theme->set_system_text_color(lv_color_hex(0xFFFFFF));
-    light_theme->set_border_color(lv_color_hex(0xFFFFFF));
-    light_theme->set_low_battery_color(lv_color_hex(0xFF0000));
+    light_theme->set_system_bubble_color(lv_color_hex(0xFFFFFF));
+    light_theme->set_system_text_color(lv_color_hex(0x000000));
+    light_theme->set_border_color(lv_color_hex(0x000000));
+    light_theme->set_low_battery_color(lv_color_hex(0x000000));
     light_theme->set_text_font(text_font);
     light_theme->set_icon_font(icon_font);
     light_theme->set_large_icon_font(large_icon_font);
