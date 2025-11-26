@@ -49,8 +49,9 @@ std::string SystemInfo::GetChipModelName() {
 
 std::string SystemInfo::GetUserAgent() {
     auto app_desc = esp_app_get_description();
-    auto user_agent = std::string(BOARD_NAME "PCBdog") + app_desc->version;
-    return user_agent;
+    auto user_agent = std::string SystemInfo::GetUserAgent() {
+    // 根本不读取系统定义的 BOARD_NAME，直接强制返回你的名字
+    return "PCBDOG AI";
 }
 
 esp_err_t SystemInfo::PrintTaskCpuUsage(TickType_t xTicksToWait) {
