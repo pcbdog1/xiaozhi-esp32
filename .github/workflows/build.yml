@@ -1,5 +1,5 @@
 name: Build Boards
- on:
+on:
   workflow_dispatch:
     inputs:
       board:
