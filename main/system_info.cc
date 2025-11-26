@@ -49,7 +49,7 @@ std::string SystemInfo::GetChipModelName() {
 
 std::string SystemInfo::GetUserAgent() {
     auto app_desc = esp_app_get_description();
-    auto user_agent = std::string(BOARD_NAME "/") + app_desc->version;
+    auto user_agent = std::string(BOARD_NAME "PCBdog") + app_desc->version;
     return user_agent;
 }
 
