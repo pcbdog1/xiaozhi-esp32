@@ -1,5 +1,4 @@
 #include "lcd_display.h"
-#include "../img_wallpaper.c"
 #include "gif/lvgl_gif.h"
 #include "settings.h"
 #include "lvgl_theme.h"
@@ -21,7 +20,6 @@
 LV_FONT_DECLARE(BUILTIN_TEXT_FONT);
 LV_FONT_DECLARE(BUILTIN_ICON_FONT);
 LV_FONT_DECLARE(font_awesome_30_4);
-LV_IMG_DECLARE(img_wallpaper)
 
 void LcdDisplay::InitializeLcdThemes() {
     auto text_font = std::make_shared<LvglBuiltInFont>(&BUILTIN_TEXT_FONT);
