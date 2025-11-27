@@ -1076,8 +1076,18 @@ void LcdDisplay::SetTheme(Theme* theme) {
     if (lvgl_theme->background_image() != nullptr) {
         lv_obj_set_style_bg_image_src(container_, lvgl_theme->background_image()->image_dsc(), 0);
     } else {
-        lv_obj_set_style_bg_image_src(container_, nullptr, 0);
-        lv_obj_set_style_bg_color(container_, lvgl_theme->background_color(), 0);
+        // === 修改开始：强制显示我的壁纸 ===
+        
+        // 1. 设置背景图源（注意：要用 & 符号）
+        lv_obj_set_style_bg_image_src(container_, &img_wallpaper, 0);
+        
+        // 2. 设置不透明
+        lv_obj_set_style_bg_image_opa(container_, LV_OPA_COVER, 0);
+        
+        // 3. 把底色设为白色（避免颜色叠加变暗）
+        lv_obj_set_style_bg_color(container_, lv_color_white(), 0);
+        
+        // === 修改结束 ===
     }
     
     // Update top bar background color with 50% opacity
