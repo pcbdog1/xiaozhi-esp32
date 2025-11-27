@@ -1,4 +1,5 @@
 #include "lcd_display.h"
+#include "../img_wallpaper.c"
 #include "gif/lvgl_gif.h"
 #include "settings.h"
 #include "lvgl_theme.h"
