@@ -265,10 +265,12 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMAGE_IMG_WAL
 };
 
 const lv_image_dsc_t img_wallpaper = {
-  .header.cf = LV_COLOR_FORMAT_RGB565,
-  .header.magic = LV_IMAGE_HEADER_MAGIC,
-  .header.w = 240,
-  .header.h = 240,
+  .header = {                 // <--- 加上这层花括号
+    .cf = LV_COLOR_FORMAT_RGB565,
+    .magic = LV_IMAGE_HEADER_MAGIC,
+    .w = 240,
+    .h = 240,
+  },                          // <--- 记得加上逗号和闭合花括号
   .data_size = 57600 * 2,
   .data = img_wallpaper_map,
 };
