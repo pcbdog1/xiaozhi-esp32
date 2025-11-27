@@ -448,7 +448,7 @@ void LcdDisplay::SetupUI() {
     lv_label_set_long_mode(status_label_, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_obj_set_style_text_align(status_label_, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_set_style_text_color(status_label_, lvgl_theme->text_color(), 0);
-    lv_label_set_text(status_label_, Lang::Strings::INITIALIZING);
+    lv_label_set_text(status_label_, "Pcbdog AI");
     lv_obj_align(status_label_, LV_ALIGN_CENTER, 0, 0);
     
     /* Content - Chat area */
@@ -884,7 +884,7 @@ void LcdDisplay::SetupUI() {
     lv_label_set_long_mode(status_label_, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_obj_set_style_text_align(status_label_, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_set_style_text_color(status_label_, lvgl_theme->text_color(), 0);
-    lv_label_set_text(status_label_, Lang::Strings::INITIALIZING);
+    lv_label_set_text(status_label_, "Pcbdog AI");
     lv_obj_align(status_label_, LV_ALIGN_CENTER, 0, 0);
 
     /* Top layer: Bottom bar - fixed at bottom, minimum height 48, height can be adaptive */
