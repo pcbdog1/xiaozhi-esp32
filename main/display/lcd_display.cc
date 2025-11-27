@@ -20,6 +20,7 @@
 LV_FONT_DECLARE(BUILTIN_TEXT_FONT);
 LV_FONT_DECLARE(BUILTIN_ICON_FONT);
 LV_FONT_DECLARE(font_awesome_30_4);
+LV_IMG_DECLARE(img_wallpaper)
 
 void LcdDisplay::InitializeLcdThemes() {
     auto text_font = std::make_shared<LvglBuiltInFont>(&BUILTIN_TEXT_FONT);
@@ -373,12 +374,17 @@ void LcdDisplay::SetupUI() {
     container_ = lv_obj_create(screen);
     lv_obj_set_size(container_, LV_HOR_RES, LV_VER_RES);
     lv_obj_set_style_radius(container_, 0, 0);
-    lv_obj_set_flex_flow(container_, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_style_pad_all(container_, 0, 0);
     lv_obj_set_style_border_width(container_, 0, 0);
-    lv_obj_set_style_pad_row(container_, 0, 0);
-    lv_obj_set_style_bg_color(container_, lvgl_theme->background_color(), 0);
+    
+    // ====== 修改开始：设置背景图 ======
+    lv_obj_set_style_bg_color(container_, lv_color_white(), 0); 
+    lv_obj_set_style_bg_image_src(container_, &img_wallpaper, 0);
+    lv_obj_set_style_bg_image_opa(container_, LV_OPA_COVER, 0);
+    // ====== 修改结束 ======
     lv_obj_set_style_border_color(container_, lvgl_theme->border_color(), 0);
+
+    
 
     /* Layer 1: Top bar - for status icons */
     top_bar_ = lv_obj_create(container_);
